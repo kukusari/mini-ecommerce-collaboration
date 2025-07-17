@@ -16,21 +16,24 @@ document.addEventListener('DOMContentLoaded', () => {
         products.forEach(product => {
             const card = document.createElement('div');
             card.className = 'product-card';
+
+            const formattedPrice = Number(product.price).toLocaleString('th-TH');
+
             card.innerHTML = `
                 <img src="${product.image}" alt="${product.name}">
                 <h3>${product.name}</h3>
-                <p>ราคา: ${product.price} บาท</p>
+                <p>ราคา: ${formattedPrice} บาท</p>
             `;
             productList.appendChild(card);
         });
-    }
-    // Inefficient Search
+    }/* ตรงนี้เป็นส่วนของการตกแต่งปรับขนาด*/
+
+    // Search filter
     searchInput.addEventListener('keyup', () => {
         const searchTerm = searchInput.value.toLowerCase();
-        const filteredProducts = allProducts.filter(product => {
-            // Simple search, not very efficient
-            return product.name.toLowerCase().includes(searchTerm);
-        });
+        const filteredProducts = allProducts.filter(product =>
+            product.name.toLowerCase().includes(searchTerm)
+        );
         displayProducts(filteredProducts);
     });
 });
