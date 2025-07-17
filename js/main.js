@@ -30,10 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Search filter
     searchInput.addEventListener('keyup', () => {
-        const searchTerm = searchInput.value.toLowerCase();
-        const filteredProducts = allProducts.filter(product =>
-            product.name.toLowerCase().includes(searchTerm)
-        );
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        if (searchTerm == ''){
+            displayProducts(allProducts);
+            return
+        }
+        const filteredProducts = allProducts.filter(product => {
+            return product.name.toLowerCase().includes(searchTerm);
+        });
         displayProducts(filteredProducts);
     });
 });
