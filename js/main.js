@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
             productList.appendChild(card);
         });
     }
-
     // Inefficient Search
     searchInput.addEventListener('keyup', () => {
         const searchTerm = searchInput.value.toLowerCase();

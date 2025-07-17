@@ -12,6 +12,7 @@ main {justify-content: center; padding: 1rem; }
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
 .product-card img { max-width: 100%; height: auto; }
 .product-card h3 { font-size: 1.1em; }
 .product-card p { color: #888; }
