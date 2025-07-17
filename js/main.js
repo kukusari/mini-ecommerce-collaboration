@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             productList.appendChild(card);
         });
-    }
+    }/* ตรงนี้เป็นส่วนของการตกแต่งปรับขนาด*/
 
     // Search filter
     searchInput.addEventListener('keyup', () => {
